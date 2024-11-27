@@ -1,10 +1,12 @@
+/* Fontok */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+@font-face { font-family: Protest; font-display: swap; src: url('fonts/ProtestRevolution-Regular.ttf'); }
+
 * {
     box-sizing: border-box;
     margin: 0;
 }
-/* Fontok */
-@font-face { font-family: Protest; font-display: swap; src: url('fonts/ProtestRevolution-Regular.ttf'); } 
-
 
 /*HEADER*/
 header{
@@ -150,7 +152,7 @@ article{
 }
 .quotesymbtop, .quotesymbbot{
     color: rgb(220, 194, 61);
-    font-family: Protest;
+    font-family: 'Protest';
     font-size: 4em;
 
 }
@@ -183,24 +185,31 @@ article{
     opacity: 0; /* Alapértelmezett elrejtés */
     position: absolute; /* Egymásra helyezéshez */
     width: 100%;
+    
 }
 
+.quote p, .title{
+    margin:0;
+    padding:0;
+    font-family: 'Oswald','sans-serif';
+    font-weight: 300;
+
+}
 .quote p{
     position: relative;
     text-indent: 0;
     padding: 0;
-    margin: 0;
     left: 30px;
     top: 20px;
 }
 
 .title{
-    margin:0;
     position: absolute;
     align-self: flex-start;
     padding: 0;
     opacity: 0;
     top:120px;
+    right: 30px;
 }
 /*horizontal line*/
 .und_quo{
