@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="...">
+    <meta name="copyright" content="...">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="kepek/logo/Untitled.png" type="image/x-icon">
+    <title>Co Lee ismertető</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", init);
+
+        function init() {
+            let hamMenu = document.querySelector('.ham_menu');
+            let nav = document.querySelector('nav');
+            let navbar = document.querySelector('.navbar');
+            let navbar_x = document.querySelector('.navbar_x');
+
+            hamMenu.addEventListener('click', function () {
+                nav.classList.toggle('visible');
+                navbar.classList.toggle('hidden');
+                navbar_x.classList.toggle('visible');
+            });
+
+            navbar_x.addEventListener('click', function () {
+                nav.classList.toggle('visible');
+                navbar_x.classList.toggle('visible');
+                navbar.classList.toggle('hidden');
+            });
+        }
+        
+        document.addEventListener("DOMContentLoaded", quotesfunc);
+
+        let currentIndex = 0;
+
+        function quotesfunc() {
+            const quote = document.querySelectorAll(`.quote`);
+            const title = document.querySelectorAll(`.title`)
+
+            // Aktuális idézet megjelenítése
+            quote[currentIndex].style.opacity = '1';
+            title[currentIndex].style.opacity = `1`;
+            quote[currentIndex].style.animation = `fade 5s ease-in-out`;
+            title[currentIndex].style.animation = `fade 5s ease-in-out`;
+
+            // Előző idézet elrejtése, ha nem az első ciklus
+            if (currentIndex > 0) {
+                quote[currentIndex - 1].style.opacity = '0';
+                title[currentIndex - 1].style.opacity = '0';
+                quote[currentIndex - 1].style.animation = `none`;
+                title[currentIndex - 1].style.animation = `none`;
+            } else if (currentIndex == 0) {
+                // Ha az első elemre váltunk, rejtsük el az utolsó elemet
+                quote[quote.length - 1].style.opacity = '0';
+                title[title.length - 1].style.opacity = '0';
+                quote[quote.length - 1].style.animation = `none`;
+                title[quote.length - 1].style.animation = `none`;
+            }
+
+            // Következő idézetre váltás
+            currentIndex++;
+
+            // Ha elérjük a lista végét, kezdjük újra
+            if (currentIndex >= quote.length) {
+                currentIndex = 0;
+            }
+        }
+
+        // 5 másodpercenként váltás
+        setInterval(quotesfunc, 5000);
+        
+        
+        
+            
+        
+    </script>   
+</head>
+<body>
+    <header>
+        <div class = "navbar">
+            <div class="ham_menu">
+                <div class="bars"></div>
+                <div class="bars"></div>
+                <div class="bars"></div>
+            </div>
+        </div>
+        <div class = "navbar_x">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+        </div>
+        <a href="index.html"><img class = "logo" src ="kepek/logo/colee_logo.png" alt="Co Lee logó"></a>
+    </header>
+    <nav>
+        <ul>
+            <li>pop</li>
+                <ul>
+                    <li>fasz</li>
+                </ul>
+            <li>alt</li>
+            <li>rock</li>
+            <li>rap</li>
+        </ul>
+    </nav>
+    
+    <article>
+        <div class = "slider">
+            <div class = "slides">
+                <img src="kepek/minden/simakolos.jpg">
+                <img src="kepek/minden/colee_blaize.jpg">
+                <img src="kepek/minden/cirquekoncert.jpg">
+                <img src="kepek/minden/borondkis.jpg">
+            </div>
+            <div class = "slides">
+                <img src="kepek/minden/simakolos.jpg">
+                <img src="kepek/minden/colee_blaize.jpg">
+                <img src="kepek/minden/cirquekoncert.jpg">
+                <img src="kepek/minden/borondkis.jpg">
+            </div>
+        </div>
+        <div class = "kulso">
+            <div class = "quotesymbtop">"</div>
+        </div>
+        <div class ="quotes">    
+            <div class="quote">
+                <p>"Apám őrjöngő ökle vagyok<br>
+                    Én és a fal, mikor eggyé váltak,<br>
+                    ha csak egy percig is<br>
+                    Anyám törékeny szíve vagyok"</p>
+            </div>    
+            <p class="title">- HARCOSOK KLUBJA</p>
+            
+            <div class="quote">
+                <p>"Egyedül Budapesten,<br>
+                    hogy lett olyan egyszerű tétel a távolság"</p>  
+            </div>
+            <p class="title">- EGYEDÜL BUDAPESTEN</p>
+            
+            <div class="quote">
+                <p>"Teagőz és cigifüst<br>
+                    Ezek mögött is te vagy<br>
+                    Mint a hegyek mögött istenek<br>
+                    A kövek között is te laksz"</p>
+            </div>
+            <p class="title">- UKG TEA</p>
+
+            <div class="quote">
+                <p>"Bilincs a lábékszer,<br>
+                    a tenger hullámokkal csókol partot<br>
+                    Vajon hová vész el<br>
+                    Vajon hová nézel, amikor nem rám"</p>
+            </div>
+            <p class="title">- PÁNCÉLSZEKRÉNY</p>
+
+            <div class="quote">
+                <p>"Mert ez egy gyönyörű reggel<br>
+                    Ujjal tartom a napfényt<br>
+                    Ahogy csillog a tested, <br>
+                    mint a csillagok este"
+                    </p>
+            </div>
+            <p class="title">-GYÖNYÖRŰ REGGEL</p>
+
+            <div class="quote">
+                <p>"Nem kell a koronadísz, csak várak,hegyek <br>
+                    és marad a highness<br>
+                    Egy kenuban születtem én,<br>
+                    a sírom egy katamarán lesz"
+                    </p>
+            </div>
+            <p class="title">-BŐRÖNDKÍSÉRŐ</p>
+
+            <div class="quote">
+                <p>"Nálam tágas a táska, nem váltok más avatárra<br>
+                    A lövészeim tudják nálam más van a tárban"
+                </p>
+            </div>
+            <p class="title">- OLYAN VAGYOK
+
+            <div class="quote">
+                <p>"Mint a száradó aszfalt, én olyan vagyok<br>
+                    Bennem a mindennek lenyomata"</p>
+            </div>
+            <p class="title">- OLYAN VAGYOK</p>
+            
+        </div>
+        <div class = "kulso">
+            <div class = "quotesymbbot">"</div>
+        </div>
+        <div class = "und_quo">
+            <hr>
+        </div>
+        <div class ="albums">
+            
+            <div class ="cirque">
+                <a href="cirque.html"><h2>Cirque de L'Homme</h2></a>
+                    <figure>
+                        <a href="cirque.html"><img src ="kepek/minden/cirquealbumcov.jpg" alt="asd" width = "100%"></a>
+                        <figcaption>cica 2015-ben</figcaption>
+                    </figure>
+                </a>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus quaerat culpa, id repellat reprehenderit aliquid natus cupiditate adipisci quidem consectetur numquam nam minima quos, beatae officia, eaque necessitatibus accusantium eveniet.</p>
+            </div>
+            
+            <div class ="program">
+                <a href="program.html"><h2>A Program</h2></a>
+                    <figure>
+                        <a href="program.html"><img src ="kepek/minden/programalbumcov.jpg" alt="asd" width = "100%"></a>
+                        <figcaption>cica 2015-ben</figcaption>
+                    </figure>
+                </a>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, quasi facere? Omnis quibusdam saepe, iusto culpa facere facilis, amet ducimus porro sapiente enim doloremque harum nam suscipit. Quae, asperiores laboriosam!</p>
+            </div>
+            
+            <div class ="la">
+                <a href="promenade.html"><h2>LA PROMENADE</h2></a>
+                    <figure>
+                        <a href="promenade.html"><img src ="kepek/minden/lapromenadealbumcob.jpg" alt="asd" width = "100%"></a>
+                        <figcaption>cica 2015-ben</figcaption>
+                    </figure>
+                </a>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Asperiores tempore temporibus sed maxime pariatur, explicabo voluptatibus quo perspiciatis enim ducimus molestiae. Aut deleniti tenetur perferendis aperiam laborum atque iusto animi!</p>
+            </div>
+
+        </div>
+    </article>
+
+    <aside>
+
+    </aside>
+
+    <footer>
+        <p>footer</p>
+    </footer>
+
+
+</body>
+
+<script>
+</script>
+
+</html>

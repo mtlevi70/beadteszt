@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="...">
+    <meta name="copyright" content="...">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <title>Document</title>
+   
+</head>
+<body>
+    <header>
+        <div class = "navbar">
+            <div class="ham_menu">
+                <div class="bars"></div>
+                <div class="bars"></div>
+                <div class="bars"></div>
+            </div>
+        </div>
+        <a href="index.html"><h1>Zenekarok</h1></a>
+    </header>
+    <nav>
+        <ul>
+            <li>pop</li>
+            <li>alt</li>
+            <li>rock</li>
+            <li>rap</li>
+
+        </ul>
+    </nav>
+    
+    <h2>Alternatív</h2>
+    <article>
+        <p class="kezdo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, laboriosam! Recusandae, dolore quidem ad, omnis at vero dicta sed impedit vel porro aut, nihil mollitia? Quia deleniti quibusdam sed autem.
+        Recusandae molestiae soluta quae vel, eveniet asperiores consequatur explicabo doloremque cumque eaque enim, aliquam id iste quia quis! Aut voluptatibus repellendus sequi, itaque officiis qui explicabo numquam doloribus quia quis?</p>
+        <figure>
+            <img src ="kepek/alt/tigris.jpg" alt="asd" width = "100%">
+            <figcaption>tigris 2015-ös koncerten</figcaption>
+        </figure>
+    </article>
+
+    <aside>
+
+    </aside>
+
+    <footer>
+
+    </footer>
+
+
+</body>
+
+<script>
+    const imageLinks = document.querySelectorAll('.image-link img');
+
+imageLinks.forEach(img => {
+    img.addEventListener('touchstart', () => {
+        img.style.filter = 'grayscale(50%)';  // Szürkévé válik, amikor a felhasználó rákattint/touchol
+    });
+    img.addEventListener('touchend', () => {
+        img.style.filter = '';  // Visszaáll az eredeti szín, amikor az érintés befejeződik
+    });
+});
+</script>
+
+</html>
