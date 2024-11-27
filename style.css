@@ -240,9 +240,6 @@ article{
     width: 80%;
     margin: 10px 0;
 }
-h2{
-    text-align: center;
-}
 
 .albums h2{
     text-decoration: underline;
@@ -270,9 +267,6 @@ article a{
 }
 .cirque a img, .program a img, .la a img {
     width: 80%;
-}
-.pop img:active, .alt img:active, .rock img:active, .rap img:active{
-    filter: grayscale(50%);
 }
 
 
