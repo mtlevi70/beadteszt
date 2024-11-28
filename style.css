@@ -282,7 +282,7 @@ article a{
 /* Kolos */
 .kolos{
     background-color: rgba(212, 212, 212, 0.238);;
-    margin: 20px auto;
+    margin: 20px 20px;
 
 }
 .kolos_pic1{
@@ -292,8 +292,7 @@ article a{
     align-items: center;
 }
 .kolos_pic1 img{
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 20px auto;
     width: 90%;
     height: 200px;
     object-fit:cover;
