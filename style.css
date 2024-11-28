@@ -6,6 +6,7 @@
 * {
     box-sizing: border-box;
     margin: 0;
+    color: white;
 }
 
 /*HEADER*/
@@ -177,8 +178,8 @@ article{
     overflow: hidden;
     background-color: rgba(212, 212, 212, 0.1);
     border-radius: 25px;
-    margin:0;
-    margin: 10px;
+
+    margin: 10px 10px 20px 10px;
 }
 
 .quotes .quote { 
@@ -213,9 +214,11 @@ article{
 }
 /*horizontal line*/
 .und_quo{
+    
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
+
 }
 
 .und_quo hr{
@@ -224,7 +227,6 @@ article{
     color: grey;
 
 }
-
 
 /*album fülek*/
 
@@ -235,14 +237,13 @@ article{
     text-align: center;
 }
 .cirque, .program, .la {
-    background-color: rgb(238, 238, 238);
     border-radius: 20px;
     width: 80%;
     margin: 10px 0;
 }
 
 .albums h2{
-    text-decoration: underline;
+    text-decoration: none;
     text-decoration-color:grey;
     color: black
 }
@@ -267,6 +268,48 @@ article a{
 }
 .cirque a img, .program a img, .la a img {
     width: 80%;
+}
+
+.cirque{
+    background-color: rgb(162, 38, 38);
+}
+.program{
+    background-color: #bc8b3c;
+}
+.la{
+    background-color: gray;
+}
+
+/* Kolos */
+.kolos{
+    background-color: rgba(212, 212, 212, 0.238);;
+    margin: 20px;
+
+}
+.kolos_pic1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.kolos_pic1 img{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 90%;
+    height: 200px;
+    object-fit:cover;
+    object-position: top;
+    
+
+}
+.interviews1{
+    margin-left:20px;
+    margin-right: 20px;
+}
+.interviews1 p{
+    padding-bottom: 20px;
+    text-indent: 2em;
+    font-family: 'Oswald','sans-serif';
 }
 
 
