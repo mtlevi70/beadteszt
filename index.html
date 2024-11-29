@@ -7,74 +7,11 @@
     <meta name="copyright" content="...">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="kepek/logo/Untitled.png" type="image/x-icon">
+      
+ <!--     <script src="jquery-3.7.1.min.js"></script> --> 
+    
     <title>Co Lee ismertető</title>
-    <script>
-        document.addEventListener("DOMContentLoaded", init);
 
-        function init() {
-            let hamMenu = document.querySelector('.ham_menu');
-            let nav = document.querySelector('nav');
-            let navbar = document.querySelector('.navbar');
-            let navbar_x = document.querySelector('.navbar_x');
-
-            hamMenu.addEventListener('click', function () {
-                nav.classList.toggle('visible');
-                navbar.classList.toggle('hidden');
-                navbar_x.classList.toggle('visible');
-            });
-
-            navbar_x.addEventListener('click', function () {
-                nav.classList.toggle('visible');
-                navbar_x.classList.toggle('visible');
-                navbar.classList.toggle('hidden');
-            });
-        }
-        
-        document.addEventListener("DOMContentLoaded", quotesfunc);
-
-        let currentIndex = 0;
-
-        function quotesfunc() {
-            const quote = document.querySelectorAll(`.quote`);
-            const title = document.querySelectorAll(`.title`)
-
-            // Aktuális idézet megjelenítése
-            quote[currentIndex].style.opacity = '1';
-            title[currentIndex].style.opacity = `1`;
-            quote[currentIndex].style.animation = `fade 5s ease-in-out`;
-            title[currentIndex].style.animation = `fade 5s ease-in-out`;
-
-            // Előző idézet elrejtése, ha nem az első ciklus
-            if (currentIndex > 0) {
-                quote[currentIndex - 1].style.opacity = '0';
-                title[currentIndex - 1].style.opacity = '0';
-                quote[currentIndex - 1].style.animation = `none`;
-                title[currentIndex - 1].style.animation = `none`;
-            } else if (currentIndex == 0) {
-                // Ha az első elemre váltunk, rejtsük el az utolsó elemet
-                quote[quote.length - 1].style.opacity = '0';
-                title[title.length - 1].style.opacity = '0';
-                quote[quote.length - 1].style.animation = `none`;
-                title[quote.length - 1].style.animation = `none`;
-            }
-
-            // Következő idézetre váltás
-            currentIndex++;
-
-            // Ha elérjük a lista végét, kezdjük újra
-            if (currentIndex >= quote.length) {
-                currentIndex = 0;
-            }
-        }
-
-        // 5 másodpercenként váltás
-        setInterval(quotesfunc, 5000);
-        
-        
-        
-            
-        
-    </script>   
 </head>
 <body>
     <header>
@@ -104,20 +41,6 @@
     </nav>
     
     <article>
-        <div class = "slider">
-            <div class = "slides">
-                <img src="kepek/minden/cirquekoncert1.jpg">
-                <img src="kepek/minden/colee_blaize.jpg">
-                <img src="kepek/minden/cirquekoncert.jpg">
-                <img src="kepek/minden/borondkis.jpg">
-            </div>
-            <div class = "slides">
-                <img src="kepek/minden/cirquekoncert1.jpg">
-                <img src="kepek/minden/colee_blaize.jpg">
-                <img src="kepek/minden/cirquekoncert.jpg">
-                <img src="kepek/minden/borondkis.jpg">
-            </div>
-        </div>
         <div class = "kulso">
             <div class = "quotesymbtop">"</div>
         </div>
@@ -195,10 +118,12 @@
                 <img src = 'kepek/minden/simakolos.jpg'>
             </div>
             <div class = interviews1>
-                <p>Co Lee, azaz Halász Kolos az egyik legtehetségesebb és legsokoldalúbb Z-generációs rapper. Tagja a Wavy Kollektívának, de együttműködött már többek között Miller Dáviddal, Beton.Hofival és Lil Frakkal is. Bécsben járt középiskolába, modellként utazott a világban és tanult bohócnak is, 24 évesen, három albummal (az angol nyelvű Air, a magyar Cirque de L’Homme és a Program) a háta mögött pedig június 1-én, a Margit-szigeten rendezi meg eddigi legnagyobb koncertjét.</p>
-                <p>Co Lee tavaly januárban még az After Feltörekvők adásának vendége volt, mostanra pedig négy nagylemezzel és több kisebb EP-vel a háta mögött az egyik legnépszerűbb rappernek számít. Magát a top 3 legjobb rapper közé sorolja itthon, Blaize-zel közös La Promenade című új nagylemezét pedig az idei év legjobb albumának tartja. Co Lee valódi kaméleon, aki miután lemosta a bohócsminkjét, felvette a bőröndöt, hogy végül megkezdje a sétát önmaga felé. Mint mondja, most már a mélységek és a lényéhez való közeledés érdekli igazán, és soha nem szeretne megérkezni.</p>
+                <p>Co Lee, azaz Halász Kolos az egyik legtehetségesebb és legsokoldalúbb Z-generációs rapper. Tagja a Wavy Kollektívának, de együttműködött már többek között Miller Dáviddal, Beton.Hofival és Lil Frakkal is. Bécsben járt középiskolába, modellként utazott a világban és tanult bohócnak is. </p>
+                
+                <p>Co Lee mostanra négy nagylemezzel és több kisebb EP-vel a háta mögött az egyik legnépszerűbb rappernek számít. Magát a top 3 legjobb rapper közé sorolja itthon, Blaize-zel közös La Promenade című új nagylemezét pedig az idei év legjobb albumának tartja. Co Lee valódi kaméleon, aki miután lemosta a bohócsminkjét, felvette a bőröndöt, hogy végül megkezdje a sétát önmaga felé. Mint mondja, most már a mélységek és a lényéhez való közeledés érdekli igazán, és soha nem szeretne megérkezni.</p>
             </div>
-            
+            <div class ='kolos_pic2'></div>
+            <div class="interviews2"></div>
         </div>
         <div class ="albums">
             
@@ -240,9 +165,13 @@
     </aside>
 
     <footer>
-        <p>footer</p>
+        <p>@2024 Hegyi Levente</p>
+        <p>Az oldal csak oktatási célra készült.</p>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="slick-1.8.1/slick/slick.js" charset="utf-8"></script>
+    <script type="text/javascript" src="default_script.js"></script>
 
 </body>
 
