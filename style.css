@@ -583,7 +583,7 @@ footer p {
         background-color: rgba(206, 206, 206,0.9);
         position:sticky;
         display: flex;
-        height: 55px;
+        height: 100%;
         top: 0;
         margin-bottom: 10px;
         justify-content: space-around;
@@ -599,7 +599,7 @@ footer p {
     }
     nav ul li a{
         padding: 0;
-        font-size: larger;
+        font-size: calc(1vw + 0.6vh);
     }
     nav ul li a img {
         display: none;
