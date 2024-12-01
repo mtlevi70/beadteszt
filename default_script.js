@@ -1,15 +1,10 @@
 let currentIndex = 0;
-$(document).ready(function () {
-    init();
-    setInterval(function () {
-        quotesfunc();
-        $(".center").slick('slickNext'); // Slick váltás szinkronban
-    }, 6000);
-
+document.addEventListener("DOMContentLoaded", init);
+$(document).ready(function(){
+    quotesfunc();
+    rand_spotify();
 });
-
-
-
+setInterval(quotesfunc, 6000);
 
 function init() {
     let hamMenu = document.querySelector('.ham_menu');
@@ -32,13 +27,13 @@ function init() {
 
 function quotesfunc() {
     const quote = document.querySelectorAll(`.quote`);
-    const title = document.querySelectorAll(`.title`)
+    const title = document.querySelectorAll(`.song_title`)
 
     // Aktuális idézet megjelenítése
     quote[currentIndex].style.opacity = '1';
     title[currentIndex].style.opacity = `1`;
-    quote[currentIndex].style.animation = `fade 5s ease-in-out`;
-    title[currentIndex].style.animation = `fade 5s ease-in-out`;
+    quote[currentIndex].style.animation = `fade 6s ease-in-out`;
+    title[currentIndex].style.animation = `fade 6s ease-in-out`;
 
     // Előző idézet elrejtése, ha nem az első ciklus
     if (currentIndex > 0) {
@@ -51,9 +46,8 @@ function quotesfunc() {
         quote[quote.length - 1].style.opacity = '0';
         title[title.length - 1].style.opacity = '0';
         quote[quote.length - 1].style.animation = `none`;
-        title[quote.length - 1].style.animation = `none`;
+        title[title.length - 1].style.animation = `none`;
     }
-
     // Következő idézetre váltás
     currentIndex++;
 
@@ -61,39 +55,12 @@ function quotesfunc() {
     if (currentIndex >= quote.length) {
         currentIndex = 0;
     }
-
 }
 
-// 5 másodpercenként váltás
-function slick() {
-    $(".center").slick({
-        dots: true,
-        infinite: true,
-        centerMode: true,
-        centerPadding: '60px',
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        autoplay: false,
-        autoplaySpeed: 5000,
-        responsive: [
-            {
-                breakpoint: 768,
-                settings: {
-                    arrows: false,
-                    centerPadding: '40px',
-                    slidesToShow: 3
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    arrows: false,
-                    centerPadding: '0',
-                    slidesToShow: 1,
-                    dots: false
-                }
-            }
-        ]
-    });
+function rand_spotify(){
+    embbed = document.querySelectorAll(`.embbed`);
+    let rand_numb = Math.floor(Math.random() * (embbed.length));
+    embbed[rand_numb].style.opacity = '1';
 }
+
 
