@@ -1,4 +1,15 @@
-document.addEventListener("DOMContentLoaded", init);
+let currentIndex = 0;
+$(document).ready(function () {
+    init();
+    setInterval(function () {
+        quotesfunc();
+        $(".center").slick('slickNext'); // Slick váltás szinkronban
+    }, 6000);
+
+});
+
+
+
 
 function init() {
     let hamMenu = document.querySelector('.ham_menu');
@@ -18,10 +29,6 @@ function init() {
         navbar.classList.toggle('hidden');
     });
 }
-
-document.addEventListener("DOMContentLoaded", quotesfunc);
-
-let currentIndex = 0;
 
 function quotesfunc() {
     const quote = document.querySelectorAll(`.quote`);
@@ -54,7 +61,39 @@ function quotesfunc() {
     if (currentIndex >= quote.length) {
         currentIndex = 0;
     }
+
 }
 
 // 5 másodpercenként váltás
-setInterval(quotesfunc, 5000);
+function slick() {
+    $(".center").slick({
+        dots: true,
+        infinite: true,
+        centerMode: true,
+        centerPadding: '60px',
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: false,
+        autoplaySpeed: 5000,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    arrows: false,
+                    centerPadding: '40px',
+                    slidesToShow: 3
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    arrows: false,
+                    centerPadding: '0',
+                    slidesToShow: 1,
+                    dots: false
+                }
+            }
+        ]
+    });
+}
+
