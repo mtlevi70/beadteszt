@@ -1,165 +1,180 @@
 /* Fontok */
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 
-@font-face { font-family: Protest; font-display: swap; src: url('fonts/ProtestRevolution-Regular.ttf'); }
+@font-face {
+    font-family: Protest;
+    font-display: swap;
+    src: url('fonts/ProtestRevolution-Regular.ttf');
+}
 
 * {
     box-sizing: border-box;
     margin: 0;
     color: white;
     font-family: 'Oswald';
+
+
+}
+
+body {
+    background-color: black;
+
 }
 
 /*HEADER*/
-header{
+header {
     display: flex;
-    position:sticky;
+    position: sticky;
     justify-content: center;
     align-items: center;
     padding: 7px 10px;
     background-color: black;
-    top:0;
-    z-index: 1; /* z tengely is kell, hogy ne menjenek egymás mögé a dolgok */
+    top: 0;
+    z-index: 1;
+    /* z tengely is kell, hogy ne menjenek egymás mögé a dolgok */
 
 }
 
-.navbar{
+.navbar {
     padding: 0 5px;
     position: absolute;
     left: 12px;
 }
 
-.navbar.hidden{
-    display:none;
+.navbar.hidden {
+    display: none;
 }
 
-.navbar_x{
+.navbar_x {
     display: none;
     align-self: center;
     position: absolute;
-    top: 47%; /*valamiért nem tűnik teljesen középnek, matematikailag az pedig, szóval feljebb vittem picikét*/
-    padding:0;
+    top: 47%;
+    /*valamiért nem tűnik teljesen középnek, matematikailag az pedig, szóval feljebb vittem picikét*/
+    padding: 0;
     margin: 0 0 0 5px;
-    left:12px;
+    left: 12px;
 }
-.navbar_x.visible{
-    display:block;
+
+.navbar_x.visible {
+    display: block;
 }
-.bar1, .bar2{
-    display:block;
+
+.bar1,
+.bar2 {
+    display: block;
     width: 22px;
     height: 4px;
     background-color: rgb(224, 224, 224);
     border-radius: 10px;
     bottom: 4px;
-    
+
 }
-.bar1{
+
+.bar1 {
     position: absolute;
-    left:0;
-    top:0;
-    transform:rotate(-45deg);
+    left: 0;
+    top: 0;
+    transform: rotate(-45deg);
 }
-.bar2{
+
+.bar2 {
     position: absolute;
-    left:0;
-    top:0;
-    transform:rotate(45deg);
+    left: 0;
+    top: 0;
+    transform: rotate(45deg);
 }
-.ham_menu{
+
+.ham_menu {
     margin: 0;
 
 }
+
 .bars {
     width: 22px;
     height: 4px;
     background-color: rgb(224, 224, 224);
-    margin:5px 0;
+    margin: 5px 0;
     border-radius: 10px;
 }
-header a{
-    display:block;
+
+header a {
+    display: block;
     text-align: center;
     width: 25%;
     color: black;
 }
-.logo{
+
+.logo {
     width: 80px;
 }
-nav{
-    position:fixed;
-    left: 0;
+
+nav {
+    position: fixed;
+    top: 56px;
     width: 100%;
     background-color: rgb(206, 206, 206);
-    padding: 10px;
-    display:none;
+    display: none;
     z-index: 1;
 }
 
-nav.visible{
-    display:block;
+.nav_logo{
+    display: none;
 }
+nav.visible {
+    display: block;
+}
+
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-nav ul li {
-    padding: 10px 0;
-    text-align: center;
+nav ul li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    color: black;
+    text-decoration: none;
 }
 
-nav.active {
-    display: block;
+nav ul li a img {
+    height: 20px;
+    /* Nyíl méretének beállítása */
+    margin-left: 10px;
+    /* Térköz a szöveg és a nyíl között */
 }
-
-
-/*ARTICLE*/
-
-article{
-    background-color: black;
-    
-}
-
-/*képslide*/
 
 
 
 /* jQuery slide */
+
 .slider {
     width: 100%;
-    margin: 0;
-}
-.slick-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-.slick-track{
-    height: 230px;
 }
 
 .slick-slide img {
-    width: 100%; /* Kép szélessége */
-    height: 230px;
-    object-fit: cover;
-
+    width: 100%;
+    /* Kép szélessége */
 }
 
-.slick-prev:before, .slick-next:before {
-color: black;
+.slick-dots li button:before {
+    color: white !important;
+    /* muszáj important, különben a pseudo element átírja */
 }
 
 .slick-slide {
     transition: all ease-in-out .3s;
-    opacity: .2;
+    opacity: .5;
 }
+
 .slick-active {
     opacity: .5;
 
 }
+
 .slick-current {
     opacity: 1;
 }
@@ -167,30 +182,41 @@ color: black;
 
 
 /*idézőjelek*/
-.outer{
+.outer {
     position: relative;
 }
 
-.quotesymbtop, .quotesymbbot{
+.quotesymbtop,
+.quotesymbbot {
     color: rgb(220, 194, 61);
     font-family: 'Protest';
     font-size: 4em;
 
 }
+
 .quotesymbtop {
     position: absolute;
-    top: -5px; /* Távolság a quotes konténer tetejétől */
-    left: 7px; /* Távolság a quotes konténer bal szélétől */
+    top: -1px;
+    /* Távolság a quotes konténer tetejétől */
+    left: 7px;
+    /* Távolság a quotes konténer bal szélétől */
 }
 
 .quotesymbbot {
     position: absolute;
-    bottom: -35px; /* Távolság a quotes konténer aljától */
-    right: 10px; /* Távolság a quotes konténer jobb szélétől */
+    bottom: -33px;
+    /* Távolság a quotes konténer aljától */
+    right: 10px;
+    /* Távolság a quotes konténer jobb szélétől */
 }
 
 /*idézetfade*/
-.quotes{
+.lyrics_quotes{
+    width: 80%;
+    max-width: 340px;
+    margin: auto;
+}
+.quotes {
     position: relative;
     opacity: 1;
     height: 150px;
@@ -198,25 +224,28 @@ color: black;
     overflow: hidden;
     background-color: rgba(212, 212, 212, 0.1);
     border-radius: 25px;
-
     margin: 20px 10px;
 }
 
-.quotes .quote { 
-    opacity: 0; /* Alapértelmezett elrejtés */
-    position: absolute; /* Egymásra helyezéshez */
-    width: 100%;
-    
+.quotes .quote {
+    opacity: 0;
+    /* Alapértelmezett elrejtés */
+    position: absolute;
+    /* Egymásra helyezéshez */
+
 }
 
-.quote p, .title{
-    margin:0;
-    padding:0;
-    font-family: 'Oswald','sans-serif';
+
+.quote p,
+.song_title {
+    margin: 0;
+    padding: 0;
+    font-family: 'Oswald', 'sans-serif';
     font-weight: 300;
 
 }
-.quote p{
+
+.quote p {
     position: relative;
     text-indent: 0;
     padding: 0;
@@ -224,130 +253,420 @@ color: black;
     top: 20px;
 }
 
-.title{
+.song_title {
     position: absolute;
     align-self: flex-start;
     padding: 0;
     opacity: 0;
-    top:120px;
+    top: 120px;
     right: 30px;
 }
+
 /*horizontal line*/
-.und_quo{
-    
+.und_quo {
+
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
 
 }
 
-.und_quo hr{
-    
+.und_quo hr {
+
     width: 90%;
     color: grey;
 
 }
 
-/*album fülek*/
-
-.albums{
+/* ARTICLE */
+article {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-}
-.cirque, .program, .la {
-    border-radius: 20px;
-    width: 80%;
-    margin: 10px 0;
-}
-
-.albums h2{
-    text-decoration: none;
-    color: black
-}
-
-.albums p{
-    text-indent: 2em;
-    text-align: left;
-    margin: 15px 20px;
-}
-
-figcaption{
-    margin: 0 0 0 5px;
-    text-align:left;
-}
-article a{
-    text-decoration: none;
-    color: black;
-}
-
-.la{
-    margin: 10px 0 20px 0;
-}
-.cirque a img, .program a img, .la a img {
-    width: 80%;
-}
-
-.cirque{
-    background-color: rgb(162, 38, 38);
-}
-.program{
-    background-color: #bc8b3c;
-}
-.la{
-    background-color: #3e6876;
+    flex-direction: column;
 }
 
 /* Kolos */
-.kolos{
-    background-color: rgba(212, 212, 212, 0.238);;
-    margin: 20px 20px;
+.kolos {
+    background-color: rgba(212, 212, 212, 0.238);
+    ;
+    margin: 20px 20px 10px 20px;
 
 }
-.kolos_pic1{
+
+.kolos_pic1 {
+    height: 100%;
     display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.kolos_pic1 img {
+    width: 100%;
+    margin-top: 20px;
+
+
+}
+
+.description {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.description p {
+    padding-bottom: 20px;
+    text-indent: 2em;
+    font-family: 'Oswald', 'sans-serif';
+}
+
+.kolosmore {
+    text-align: right;
+    padding: 0 20px 20px 0;
+
+}
+
+.kolosmore a {
+    background-color: rgba(212, 212, 212, 0.238);
+    padding: 8px;
+    border-radius: 10px;
+}
+
+/*album fülek*/
+.title {
+    /* zeneajánlónál is ez van */
+    font-size: 1.5em;
+    text-align: center;
+    margin: 15px 0;
+}
+
+
+.albums {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.cirque,
+.program,
+.la {
+    display: flex;
+
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-.kolos_pic1 img{
-    margin: 20px auto;
-    width: 90%;
-    height: 200px;
-    object-fit:cover;
-    object-position: top;
-    
+    margin: 0;
+    border-radius: 20px;
+    width: 80%;
+
 
 }
-.interviews1{
-    margin-left:20px;
-    margin-right: 20px;
+
+.albums p {
+    text-align: center;
+    margin-top: 13px;
+    color: white;
+    font-size: large;
+
 }
-.interviews1 p{
-    padding-bottom: 20px;
-    text-indent: 2em;
-    font-family: 'Oswald','sans-serif';
+
+.programmore,
+.cirquemore,
+.lamore {
+    padding: 0;
+    margin: 30px;
+}
+
+
+.cirque img,
+.program img,
+.la img {
+    width: 85%;
+    margin-top: 15px;
+}
+
+.cirque {
+    background-color: rgb(162, 38, 38);
+}
+
+.program {
+    background-color: #bc8b3c;
+    margin: 15px 0;
+}
+
+.la {
+    background-color: #3e6876;
+    margin-bottom: 20px;
+}
+
+
+.cirquemore a,
+.programmore a,
+.lamore a {
+    background-color: rgba(0, 0, 0, 0.238);
+    padding: 8px;
+    border-radius: 10px;
+}
+
+/* ASIDE */
+aside {
+    background-color: black;
+    order: 1;
+}
+
+/*zeneajánló*/
+.song_rec p {
+    text-align: center;
+
+}
+
+.spotify_embbed {
+    margin: 0 10%;
+    position: relative;
+    height: 152px;
+    margin-bottom: 20px;
+
+}
+
+.spotify_embbed iframe {
+    position: absolute;
+    opacity: 0;
+
+
 }
 
 
 /* footer */
-footer{
+footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 45px;
     background-color: grey;
-    margin: 0;
+    padding: 5px;
 }
+
 footer p {
     font-size: small;
-    margin:0 10px;
-    color:rgb(192, 192, 192);
+    margin: 0 10px;
+    color: rgb(192, 192, 192);
 }
-@keyframes fade{
-    0% { opacity: 0; }   /* Kezdés */
-    10% { opacity: 1; }  /* Megjelenítés kezdete */
-    90% { opacity: 1; }  /* Megjelenítés vége */
-    100% { opacity: 0; } /* Vég */
-} 
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    /* Kezdés */
+    10% {
+        opacity: 1;
+    }
+
+    /* Megjelenítés kezdete */
+    90% {
+        opacity: 1;
+    }
+
+    /* Megjelenítés vége */
+    100% {
+        opacity: 0;
+    }
+
+    /* Vég */
+}
+
+@media only screen and (min-width: 600px) {
+
+    /* tablet */
+    body {
+        display: flex;
+        flex-direction: column;
+        /*nagyon megijedtem hogy az elején ezt nem csináltam meg, és emiatt újra kell csinálnom az egészet*/
+    }
+
+    .slider {
+        width: 80%;
+        margin: auto;
+    }
+
+    .slick-slide {
+        margin: auto 5px;
+    }
+
+    .quotes{
+        height: 190px;
+    }
+    .lyrics_quotes {
+        width: 65%;
+        min-width: 400px;
+        margin: auto;
+        font-size: 20px;
+ 
+    }
+    
+    .song_title{
+        top: 150px;
+    }
+    .quotesymbtop {
+        top: -5px;
+        /* Távolság a quotes konténer tetejétől */
+        left: 0;
+        /* Távolság a quotes konténer bal szélétől */
+    }
+    
+    .quotesymbbot {
+        bottom: -45px;
+        /* Távolság a quotes konténer aljától */
+        right: 0;
+        /* Távolság a quotes konténer jobb szélétől */
+    }
+
+
+    
+
+    .kolos_pic1 {
+        display: block;
+        margin: 0;
+    }
+
+    .description {
+        margin-top: 20px;
+    }
+
+    .description p {
+        text-align: justify;
+        margin: 0;
+
+    }
+
+    .kolos_pic1 img {
+        margin: 20px 20px 0 20px;
+        width: 300px;
+        float: left;
+    }
+
+
+    .albums {
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 10px 20px;
+    }
+
+    .cirque,
+    .program,
+    .la {
+        width: 31%;
+        margin: 15px 0;
+    }
+
+    .albums p {
+        background-color: transparent;
+        text-indent: 0;
+        text-align: center;
+
+        margin-top: 8px;
+
+    }
+    .song_rec {
+        width: 70%;
+        margin: auto;
+    }
+
+}
+@media only screen and (min-width: 768px) {
+    header{
+        display: none;
+    }
+    nav{
+        background-color: rgba(206, 206, 206,0.9);
+        position:sticky;
+        display: flex;
+        height: 55px;
+        top: 0;
+        margin-bottom: 10px;
+        justify-content: space-around;
+    }
+    nav ul{
+        display: flex;
+        align-items: center;
+    }
+    nav ul li{
+        padding: 7px 15px;
+        margin: auto 5px;
+        display:inline-block;
+    }
+    nav ul li a{
+        padding: 0;
+        font-size: larger;
+    }
+    nav ul li a img {
+        display: none;
+    }
+    .nav_logo{
+        display: block;
+        height: 37px;
+    }
+    .logo{
+        display: inline-block;
+        height: auto;
+        margin: 0;
+    }
+    /*hover színváltás*/
+    nav ul li:hover{
+        background-color: rgba(255, 255, 255, 0.6);
+        border-radius: 5px;
+    }
+    
+    .slider {
+        width: 95%;
+    }
+
+    .slick-slide {
+        margin: auto 8px;
+    }
+
+    .lyrics_quotes {
+        width: 453px;
+        margin: auto;
+        font-size: 20px;
+ 
+    }
+    
+    
+
+    .kolos{
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+    .kolos_pic1 {
+        display: flex;
+        justify-content: flex-start;
+
+    }
+    .description {
+
+        width: 70%;
+    }
+
+    .description p {
+        margin: 20px;
+        text-indent: 0;
+        font-size: 18px;
+        font-weight: 300;
+    }
+
+    .kolos_pic1 img {
+        margin: 20px;
+        width: 100%;
+
+    }
+    .kolosmore{
+        position: absolute;
+        top: 87%;
+        right: 0;
+    }
+
+
+}
+
