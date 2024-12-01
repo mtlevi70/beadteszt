@@ -127,8 +127,8 @@ nav.visible {
 
 nav ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
+    padding:0;
+    margin:0;
 }
 
 nav ul li a {
@@ -167,6 +167,7 @@ nav ul li a img {
 
 .slick-slide {
     transition: all ease-in-out .3s;
+    opacity: .5;
     opacity: .5;
 }
 
@@ -443,6 +444,7 @@ footer {
     align-items: center;
     height: 45px;
     background-color: grey;
+    padding: 5px;
     padding: 5px;
 }
 
