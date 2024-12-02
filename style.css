@@ -543,6 +543,7 @@ footer p {
     }
 
     .description p {
+        font-size: min(2.3vw,14px);
         text-align: justify;
         margin: 0;
 
