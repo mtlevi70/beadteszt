@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="...">
+    <meta name="copyright" content="...">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="kepek/logo/Untitled.png" type="image/x-icon">
+
+
+
+
+    <title>Co Lee ismertető</title>
+
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <div class="ham_menu">
+                <div class="bars"></div>
+                <div class="bars"></div>
+                <div class="bars"></div>
+            </div>
+        </div>
+        <div class="navbar_x">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+        </div>
+        <a href="index.html"><img class="logo" src="kepek/logo/colee_logo.png" alt="Co Lee logó"></a>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="bemutatas.html">Bemutatás <img src='kepek/minden/arrow_forward.png' alt="nyíl"></a></li>
+            <li class ="dropdown"><a href ="#" class= "dropbtn">Albumok</a>
+                <ul class="dropdown-content">
+                    <li><a href="cirque.html">Cirque de L'Homme</a></li>
+                    <li><a href="program.html">A Program</a></li>
+                    <li><a href="la.html">LA PROMENADE</a></li>
+                </ul>
+            </li>
+            <li class = "navalbum" ><a href="cirque.html">Cirquet de L'Homme <img src='kepek/minden/arrow_forward.png' alt="nyíl"></a></li>
+            <li class = "navalbum" ><a href="program.html">A program <img src='kepek/minden/arrow_forward.png' alt="nyíl"></a></li>
+            <li><a class = "nav_logo" href="index.html"><img class="logo" src="kepek/logo/colee_logo.png" alt="Co Lee logó"></a></li>
+            <li class = "navalbum" ><a href="la.html">LA PROMENADE <img src='kepek/minden/arrow_forward.png' alt="nyíl"></a></li>
+            <li><a href="rendeles.html">Rendelés <img src='kepek/minden/arrow_forward.png' alt="nyíl"></a></li>
+            <li><a href="jsprog.html">JS program <img src='kepek/minden/arrow_forward.png' alt="nyíl"></a></li>
+        </ul>
+    </nav>
+
+    <article>
+        <h2>Merchandise Rendelés</h2>
+        <div class="form_outer">
+            <form>
+                <label for="fullname">Teljes név:</label>
+                <input type="text" id="fullname" name="fullname"><br>
+    
+                <label for="address">Szállítási cím:</label>
+                <input type="text" id="address" name="address"><br>
+    
+                <label for="email">Email-cím:</label>
+                <input type="email" id="email" name="email"><br>
+    
+                <label for="product">Termék választása:</label>
+                <select id="product" name="product">
+                    <option value="polo">Póló</option>
+                    <option value="sapka">Sapka</option>
+                    <option value="cd">CD</option>
+                </select><br>
+    
+                <label>Méret választása:</label>
+                <input type="radio" id="size_s" name="size" value="S">
+                <label for="size_s">S</label>
+                <input type="radio" id="size_m" name="size" value="M">
+                <label for="size_m">M</label>
+                <input type="radio" id="size_l" name="size" value="L">
+                <label for="size_l">L</label>
+                <input type="radio" id="size_xl" name="size" value="XL">
+                <label for="size_xl">XL</label><br>
+    
+                <label for="quantity">Darabszám:</label>
+                <input type="number" id="quantity" name="quantity"><br>
+    
+                <label>Fizetési mód:</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="payment_card" name="payment" value="card">
+                    <label for="payment_card">Bankkártya</label>
+                    <input type="checkbox" id="payment_paypal" name="payment" value="paypal">
+                    <label for="payment_paypal">PayPal</label>
+                    <input type="checkbox" id="payment_cash" name="payment" value="cash">
+                    <label for="payment_cash">Készpénz</label>
+                </div><br>
+    
+                <div class="textarea-container">
+                    <label for="message">Üzenet a futárnak:</label>
+                    <textarea id="message" name="message" rows="4" cols="30"></textarea>
+                </div><br>
+    
+                <input type="submit" value="Rendelés leadása">
+            </form>
+        </div>
+    </article>
+
+
+        
+
+    <footer>
+        <p>@2024 Hegyi Levente</p>
+        <p>Az oldal csak oktatási célra készült.</p>
+    </footer>
+
+
+    
+
+</body>
+
+
+</html>
