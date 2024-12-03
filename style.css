@@ -487,6 +487,81 @@ footer p {
     color: rgb(192, 192, 192);
 }
 
+
+/*CIRQUE HTML*/
+.main_title {
+    font-weight: 400;
+    margin: 10px 20px 20px 20px;
+    font-size: clamp(16px, 3.5vw, 25px);
+    text-align: center;
+}
+.albumpreview {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+.red .description_pic img {
+    margin-bottom: 20px;
+}
+.interview{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 20px;
+}
+
+.interview .left,
+.interview .right {
+    width:100%;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/*interview chat színek*/
+.redbackg{background-color: rgba(112, 8, 8, 0.8);}
+.redleft{background-color: #c22828;}
+.redright{background-color: #c00707;}
+.yellowbackg{background-color: rgba(188, 139, 60, 0.8);
+font-weight: 350;}
+.yellowleft{background-color: rgb(221, 171, 90);
+    font-weight: 350;}
+.yellowright{background-color: rgb(202, 149, 63);
+    font-weight: 350;}
+.bluebackg{background-color: rgba(62, 104, 118, 0.8)}
+.blueleft{background-color: rgb(91, 134, 148)}
+.blueright{background-color: rgb(65, 107, 120)}
+
+
+
+
+.interview_container{
+    margin: 20px;
+    
+}
+
+.interview .right{
+    align-self: flex-end;
+}
+
+
+
+/*interview háttérszín + formázás*/
+.red, .yellow, .blue{
+    background-color: rgba(142, 18, 18, 0.8);
+    padding: 0;
+    padding-bottom: 20px;
+}
+.yellow{
+    background-color: rgba(188, 139, 60, 0.8);
+}
+.blue{
+    background-color: rgba(62, 104, 118, 0.8);
+}
+
+
+
 /*RENDELÉS HTML*/
 article h2 {
     text-align: center;
@@ -602,14 +677,15 @@ form input[type="submit"]:hover {
     }
 
     .quotes {
-        height: 190px;
+        height: 180px;
+        font-size: clamp(16px, 2.5vw, 18px)
     }
 
     .lyrics_quotes {
-        width: 65%;
+        width: 50%;
         min-width: 400px;
         margin: auto;
-        font-size: 20px;
+        font-size:20px;
 
     }
 
@@ -629,9 +705,6 @@ form input[type="submit"]:hover {
         right: 0;
         /* Távolság a quotes konténer jobb szélétől */
     }
-
-
-
 
     .description_pic {
         display: block;
@@ -677,6 +750,12 @@ form input[type="submit"]:hover {
     .song_rec {
         width: 70%;
         margin: auto;
+    }
+
+    /*CIRQUET HTML*/
+    .interview .left,
+    .interview .right {
+        max-width: 60%;
     }
 
     @media only screen and (min-width: 768px) {

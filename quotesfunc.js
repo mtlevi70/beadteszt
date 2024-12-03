@@ -1,29 +1,6 @@
 let currentIndex = 0;
-document.addEventListener("DOMContentLoaded", init);
-$(document).ready(function(){
-    quotesfunc();
-    rand_spotify();
-});
+document.addEventListener("DOMContentLoaded", quotesfunc());
 setInterval(quotesfunc, 6000);
-
-function init() {
-    let hamMenu = document.querySelector('.ham_menu');
-    let nav = document.querySelector('nav');
-    let navbar = document.querySelector('.navbar');
-    let navbar_x = document.querySelector('.navbar_x');
-
-    hamMenu.addEventListener('click', function () {
-        nav.classList.toggle('visible');
-        navbar.classList.toggle('hidden');
-        navbar_x.classList.toggle('visible');
-    });
-
-    navbar_x.addEventListener('click', function () {
-        nav.classList.toggle('visible');
-        navbar_x.classList.toggle('visible');
-        navbar.classList.toggle('hidden');
-    });
-}
 
 function quotesfunc() {
     const quote = document.querySelectorAll(`.quote`);
@@ -46,7 +23,7 @@ function quotesfunc() {
         quote[quote.length - 1].style.opacity = '0';
         title[title.length - 1].style.opacity = '0';
         quote[quote.length - 1].style.animation = `none`;
-        title[title.length - 1].style.animation = `none`;
+        title[quote.length - 1].style.animation = `none`;
     }
     // Következő idézetre váltás
     currentIndex++;
@@ -56,11 +33,3 @@ function quotesfunc() {
         currentIndex = 0;
     }
 }
-
-function rand_spotify(){
-    embbed = document.querySelectorAll(`.embbed`);
-    let rand_numb = Math.floor(Math.random() * (embbed.length));
-    embbed[rand_numb].style.opacity = '1';
-}
-
-

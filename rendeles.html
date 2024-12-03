@@ -8,8 +8,82 @@
     <meta name="copyright" content="...">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="kepek/logo/Untitled.png" type="image/x-icon">
-
-
+    <script src="jquery-3.7.1.js"></script>
+    <script src="jquery-validation-1.19.5/dist/jquery.validate.min.js">
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#myform").validate({
+                rules: {
+                    fullname: {
+                        required: true,
+                        minlength: 5
+                    },
+                    address: {
+                        required: true,
+                        minlength: 10
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    product: {
+                        required: true
+                    },
+                    size: {
+                        required: true
+                    },
+                    quantity: {
+                        required: true,
+                        min: 1
+                    },
+                    payment: {
+                        required: true
+                    }
+                },
+                messages: {
+                    fullname: {
+                        required: "Kérjük adja meg a nevét!",
+                        minlength: "A névnek legalább 5 karakter hosszúnak kell lennie!"
+                    },
+                    address: {
+                        required: "Kérjük adja meg a címét!",
+                        minlength: "A címnek legalább 10 karakter hosszúnak kell lennie!"
+                    },
+                    email: {
+                        required: "Kérjük adja meg az email címét!",
+                        email: "Kérjük adjon meg egy valós email címet!"
+                    },
+                    product: {
+                        required: "Kérjük válasszon terméket!"
+                    },
+                    size: {
+                        required: "Kérjük válasszon méretet!"
+                    },
+                    quantity: {
+                        required: "Kérjük adja meg a darabszámot!",
+                        min: "A darabszámnak legalább 1-nek kell lennie!"
+                    },
+                    payment: {
+                        required: "Kérjük válasszon fizetési módot!"
+                    },
+                },
+                errorPlacement: function (error, element) {
+                    if (element.attr("type") == "radio" || element.attr("type") == "checkbox") {
+                        error.insertAfter(element.closest('.checkbox-group, .size-options'));
+                    } else {
+                        error.insertAfter(element);
+                    }
+                }
+            });
+        });
+    </script>
+    <style>
+        label.error {
+        color: #e64c4c;
+        }
+        </style>
+        
 
 
     <title>Co Lee ismertető</title>
@@ -53,7 +127,7 @@
     <article>
         <h2>Merchandise Rendelés</h2>
         <div class="form_outer">
-            <form>
+            <form action="https://rf.uni-corvinus.hu/webfejlesztes/receive.php" method="post" id="myform" novalidate>
                 <label for="fullname">Teljes név:</label>
                 <input type="text" id="fullname" name="fullname"><br>
     
@@ -71,14 +145,16 @@
                 </select><br>
     
                 <label>Méret választása:</label>
-                <input type="radio" id="size_s" name="size" value="S">
-                <label for="size_s">S</label>
-                <input type="radio" id="size_m" name="size" value="M">
-                <label for="size_m">M</label>
-                <input type="radio" id="size_l" name="size" value="L">
-                <label for="size_l">L</label>
-                <input type="radio" id="size_xl" name="size" value="XL">
-                <label for="size_xl">XL</label><br>
+                <div class="size-options">
+                    <input type="radio" id="size_s" name="size" value="S">
+                    <label for="size_s">S</label>
+                    <input type="radio" id="size_m" name="size" value="M">
+                    <label for="size_m">M</label>
+                    <input type="radio" id="size_l" name="size" value="L">
+                    <label for="size_l">L</label>
+                    <input type="radio" id="size_xl" name="size" value="XL">
+                    <label for="size_xl">XL</label>
+                </div><br>
     
                 <label for="quantity">Darabszám:</label>
                 <input type="number" id="quantity" name="quantity"><br>
@@ -111,9 +187,7 @@
         <p>Az oldal csak oktatási célra készült.</p>
     </footer>
 
-
-    
-
+    <script type="text/javascript" src="navigation.js"></script>
 </body>
 
 
